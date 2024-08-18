@@ -1,0 +1,44 @@
+
+<ngx-spinner bdColor = "beige" size = "small" color = "#fff" type = "line-scale-party" fullscreen = "true">
+    <div style="color: darkgoldenrod" class="la-ball-climbing-dot la-3x">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h5 style="font-family: Verdana, Geneva, Tahoma, sans-serif;padding: auto;">
+        <b>Welcome to youtube Search</b>
+    </h5>
+</ngx-spinner>
+<form action="" method="post" class="ui warning form m-auto d-flex" style="border-color: transparent;box-shadow:none;border-radius: 15px;background-color: transparent;">
+    <!-- <input type="search" name="name" placeholder="search" class="form-control" [(ngModel)]="title" #title> 
+    <button class="ui btn btn-success m-2 button" id="title" (click)="search(title)">Search</button> -->
+    <div class="ui warning action input d-flex m-auto" style="border-color: transparent;box-shadow: 2px 3px 2px azure;border-radius: 15px;background-color: transparent;">
+        <input type="text" style="border-color: transparent;box-shadow: 2px 3px 2px gray;border-radius: 5px;background-color: transparent;" class="ui warning input" placeholder="Search..." [(ngModel)]="title" #title>
+        <button class="ui  icon button" (click)="search(title)" style="border-color: transparent;box-shadow: 2px 3px 2px gray;border-radius: 5px;background-color: transparent;">
+          <i class="ui yellow search icon"></i>
+        </button>
+      </div>
+</form>
+<div *ngFor="let video of videos" class="col-xl-3 col-sm-4 m-auto d-flex p-3" style="background-color: transparent;border-radius: 15px;">
+    <div class="ui mini card border-0 shadow vh-50 m-auto d-flex" style="border-color: transparent;box-shadow: 2px 3px 2px azure;border-radius: 15px;background-color: transparent;">
+        <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
+            <img [src]="video.snippet.thumbnails.medium.url" class="card-img-top" alt="...">
+        </a>
+        <div class="card-body text-center">
+            <h5 class="card-title mb-0">
+                <a href="https://www.youtube.com/watch?v={{video.id.videoId}}">{{video.snippet.title}}
+                </a>
+            </h5>
+            <!-- <div class="card-text text-black-50">
+                {{video.snippet.description.slice(0, 100)}}
+            </div> -->
+            <p class="card-text">{{video.snippet.description}}</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
